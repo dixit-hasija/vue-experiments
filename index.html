@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Vue js</title>
+    <script src="./node_modules/vue/dist/vue.min.js"></script>
+  </head>
+
+  <style>
+    .red{
+        color: red;
+    }
+  </style>
+  <body>
+    <div id="vue-app">
+      <h1 class="red">
+        Hi {{ message }}
+        <br />
+        {{ status }}
+      </h1>
+      <h4 v-if="status">{{ fruits[1] }}</h4>
+      <ul>
+        <li v-for="fruit in fruits">
+          {{ fruit }}
+        </li>
+      </ul>
+      <ul>
+        <li v-for="vegie in vegies">
+          {{ vegie.name }} cost is Rs . {{ vegie.cost }}
+        </li>
+      </ul>
+      <div>
+          {{upperCaseText | changeCase}}
+      </div>
+      <div>
+          {{amount | INRTOUSD}}
+      </div>
+
+      <h2  :style="{color: textColor,backgroundColor:getColor()}">Awesome</h2>
+      
+      <span>
+          {{getName()}} : Payment
+      </span>
+      <input type="text" v-model="upperCaseText" />
+      <input type="checkbox" :checked="disabled" />
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
